@@ -1,20 +1,51 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Radio } from "lucide-react";
-import tower1 from "@/assets/tower-1.jpg";
+import { ArrowRight, ChevronLeft, ChevronRight, Radio } from "lucide-react";
+import t1 from "@/assets/tower-1.jpg";
+import t2 from "@/assets/tower-2.jpg";
+import t3 from "@/assets/tower-3.jpg";
+import t4 from "@/assets/tower-4.jpg";
+
+const slides = [
+  { img: t1, alt: "Telecom tower at twilight" },
+  { img: t2, alt: "Monopole tower against sky" },
+  { img: t3, alt: "Lattice tower inspection" },
+  { img: t4, alt: "Tower joint detailing" },
+];
 
 export const Hero = () => {
+  const [i, setI] = useState(0);
+  const next = () => setI((p) => (p + 1) % slides.length);
+  const prev = () => setI((p) => (p - 1 + slides.length) % slides.length);
+
+  useEffect(() => {
+    const id = setInterval(next, 5500);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative -mt-24 min-h-[100svh] overflow-hidden bg-navy text-white">
-      {/* Image */}
+      {/* Slider background */}
       <div className="absolute inset-0">
-        <img
-          src={tower1}
-          alt="Telecom tower at twilight"
-          width={1920}
-          height={1280}
-          className="h-full w-full object-cover opacity-60"
-        />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0"
+          >
+            <img
+              src={slides[i].img}
+              alt={slides[i].alt}
+              width={1920}
+              height={1280}
+              className="h-full w-full object-cover opacity-60"
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/50 to-navy" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-transparent to-transparent" />
       </div>
@@ -111,6 +142,38 @@ export const Hero = () => {
             ))}
           </motion.div>
         </div>
+      </div>
+
+      {/* Slider controls */}
+      <div className="absolute right-6 top-32 z-10 flex gap-2 sm:right-10">
+        <button
+          onClick={prev}
+          aria-label="Previous slide"
+          className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur transition hover:bg-white/15"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          onClick={next}
+          aria-label="Next slide"
+          className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur transition hover:bg-white/15"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Slider indicators */}
+      <div className="absolute bottom-20 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setI(idx)}
+            aria-label={`Go to slide ${idx + 1}`}
+            className={`h-1 rounded-full transition-all duration-500 ${
+              i === idx ? "w-10 bg-gold" : "w-4 bg-white/40"
+            }`}
+          />
+        ))}
       </div>
 
       {/* Scroll cue */}
