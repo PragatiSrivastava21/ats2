@@ -8,10 +8,42 @@ import t3 from "@/assets/tower-3.jpg";
 import t4 from "@/assets/tower-4.jpg";
 
 const slides = [
-  { img: t1, alt: "Telecom tower at twilight" },
-  { img: t2, alt: "Monopole tower against sky" },
-  { img: t3, alt: "Lattice tower inspection" },
-  { img: t4, alt: "Tower joint detailing" },
+  {
+    img: t1,
+    alt: "Telecom tower at twilight",
+    headlinePre: "Engineering the",
+    headlineAccent: "backbone",
+    headlinePost: "of modern connectivity.",
+    subtitle:
+      "Specialist structural, fatigue and FEA/CFD engineering for telecom towers. We turn complex loads into safe, certified, future-ready infrastructure.",
+  },
+  {
+    img: t2,
+    alt: "Monopole tower against sky",
+    headlinePre: "Monopoles built to",
+    headlineAccent: "withstand",
+    headlinePost: "every storm.",
+    subtitle:
+      "Wind, ice and seismic loads modelled to international codes — delivering slender monopole designs that stay vertical for decades.",
+  },
+  {
+    img: t3,
+    alt: "Lattice tower inspection",
+    headlinePre: "Lattice towers,",
+    headlineAccent: "inspected",
+    headlinePost: "down to every bolt.",
+    subtitle:
+      "Detailed structural audits, fatigue assessments and retrofit plans that extend the service life of legacy lattice assets.",
+  },
+  {
+    img: t4,
+    alt: "Tower joint detailing",
+    headlinePre: "Connection detailing",
+    headlineAccent: "engineered",
+    headlinePost: "for zero failure.",
+    subtitle:
+      "Joint-level FEA, weld and bolt verification — because the smallest detail decides whether a tower stands or falls.",
+  },
 ];
 
 export const Hero = () => {
