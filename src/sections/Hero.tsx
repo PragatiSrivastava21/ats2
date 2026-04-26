@@ -109,31 +109,38 @@ export const Hero = () => {
             Trusted by operators across 18 countries
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-6 font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl"
-          >
-            Engineering the{" "}
-            <span className="relative inline-block">
-              <span className="text-gradient-gold">backbone</span>
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                <path d="M2 9 Q 50 2, 100 6 T 198 4" stroke="hsl(var(--gold))" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
-            </span>{" "}
-            of modern connectivity.
-          </motion.h1>
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={`h-${i}`}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl"
+            >
+              {slides[i].headlinePre}{" "}
+              <span className="relative inline-block">
+                <span className="text-gradient-gold">{slides[i].headlineAccent}</span>
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                  <path d="M2 9 Q 50 2, 100 6 T 198 4" stroke="hsl(var(--gold))" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
+              </span>{" "}
+              {slides[i].headlinePost}
+            </motion.h1>
+          </AnimatePresence>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-white/70"
-          >
-            Specialist structural, fatigue and FEA/CFD engineering for telecom towers. We turn complex loads
-            into safe, certified, future-ready infrastructure.
-          </motion.p>
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={`p-${i}`}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 max-w-xl text-lg leading-relaxed text-white/70"
+            >
+              {slides[i].subtitle}
+            </motion.p>
+          </AnimatePresence>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
