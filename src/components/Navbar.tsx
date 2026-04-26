@@ -8,9 +8,6 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/work", label: "Our Work" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
@@ -79,10 +76,10 @@ export const Navbar = () => {
 
             <div className="hidden lg:block">
               <Link
-                to="/contact"
+                to="/services"
                 className="group inline-flex items-center gap-2 rounded-xl bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-navy-2 hover:shadow-elegant"
               >
-                Get a Quote
+                Explore Services
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </div>
@@ -129,11 +126,8 @@ export const Navbar = () => {
                     {l.label}
                   </NavLink>
                 ))}
-                <Link
-                  to="/contact"
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-gold px-4 py-3 text-sm font-semibold text-navy"
-                >
-                  Get a Quote <ArrowRight className="h-4 w-4" />
+                <Link to="/services" className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-gold px-4 py-3 text-sm font-semibold text-navy">
+                  Explore Services <ArrowRight className="h-4 w-4" />
                 </Link>
               </nav>
             </motion.div>

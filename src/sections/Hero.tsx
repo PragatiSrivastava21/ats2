@@ -15,7 +15,7 @@ const slides = [
     headlineAccent: "backbone",
     headlinePost: "of modern connectivity.",
     subtitle:
-      "Specialist structural, fatigue and FEA/CFD engineering for telecom towers. We turn complex loads into safe, certified, future-ready infrastructure.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia dolorum atque inventore ratione voluptatum, numquam sint cumque excepturi! Culpa, amet?",
   },
   {
     img: t2,
@@ -24,7 +24,7 @@ const slides = [
     headlineAccent: "withstand",
     headlinePost: "every storm.",
     subtitle:
-      "Wind, ice and seismic loads modelled to international codes — delivering slender monopole designs that stay vertical for decades.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis aut ratione ut quaerat corrupti possimus eveniet deleniti ex, facilis recusandae?",
   },
   {
     img: t3,
@@ -33,7 +33,7 @@ const slides = [
     headlineAccent: "inspected",
     headlinePost: "down to every bolt.",
     subtitle:
-      "Detailed structural audits, fatigue assessments and retrofit plans that extend the service life of legacy lattice assets.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus a sed obcaecati praesentium corporis ab temporibus totam quasi explicabo asperiores.",
   },
   {
     img: t4,
@@ -42,7 +42,7 @@ const slides = [
     headlineAccent: "engineered",
     headlinePost: "for zero failure.",
     subtitle:
-      "Joint-level FEA, weld and bolt verification — because the smallest detail decides whether a tower stands or falls.",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum impedit sequi cupiditate assumenda porro, quisquam rerum in soluta repellat praesentium?",
   },
 ];
 
@@ -85,16 +85,6 @@ export const Hero = () => {
       {/* Mesh / glow */}
       <div className="absolute inset-0 bg-gradient-mesh opacity-60" />
       <div className="absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-gold/20 blur-[120px]" />
-
-      {/* Signal rings */}
-      <div className="pointer-events-none absolute right-[12%] top-[28%] hidden lg:block">
-        <div className="relative h-3 w-3">
-          <div className="absolute inset-0 rounded-full bg-gold shadow-glow" />
-          <div className="signal-ring inset-0 h-3 w-3" />
-          <div className="signal-ring inset-0 h-3 w-3" style={{ animationDelay: "1s" }} />
-          <div className="signal-ring inset-0 h-3 w-3" style={{ animationDelay: "2s" }} />
-        </div>
-      </div>
 
       {/* Content */}
       <div className="container-wide relative flex min-h-[100svh] items-center pt-32">
@@ -148,19 +138,19 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <Link
+            {/* <Link
               to="/services"
               className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-navy shadow-glow transition-all hover:shadow-[0_0_80px_hsl(var(--gold)/0.6)]"
             >
               Explore Services
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              to="/contact"
+            </Link> */}
+            {/* <Link
+              to="/services"
               className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
             >
-              Talk to an Engineer
-            </Link>
+              Explore Services
+            </Link> */}
           </motion.div>
 
           <motion.div
@@ -183,24 +173,6 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Slider controls */}
-      <div className="absolute right-6 top-32 z-10 flex gap-2 sm:right-10">
-        <button
-          onClick={prev}
-          aria-label="Previous slide"
-          className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur transition hover:bg-white/15"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next slide"
-          className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur transition hover:bg-white/15"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-      </div>
-
       {/* Slider indicators */}
       <div className="absolute bottom-20 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
         {slides.map((_, idx) => (
@@ -217,13 +189,6 @@ export const Hero = () => {
 
       {/* Scroll cue */}
       <div className="absolute inset-x-0 bottom-6 flex justify-center">
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="text-xs text-white/40"
-        >
-          ↓ scroll
-        </motion.div>
       </div>
     </section>
   );

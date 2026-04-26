@@ -22,8 +22,7 @@ export const ProblemSolution = () => {
               When old steel meets <span className="text-gradient-gold">new spectrum</span>.
             </h2>
             <p className="mt-5 max-w-lg text-white/70">
-              Networks evolve faster than the towers carrying them. We rebuild confidence in legacy assets
-              and engineer headroom for the next decade of equipment.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore in saepe magnam consequuntur possimus, quod tempora enim unde molestiae facilis!
             </p>
 
             <div className="mt-10 space-y-5">
@@ -31,13 +30,13 @@ export const ProblemSolution = () => {
                 icon={AlertTriangle}
                 tone="orange"
                 title="Overloaded legacy towers"
-                desc="5G arrays, MIMO panels and microwave dishes pushing structures past their design envelope."
+                desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore in saepe magnam consequuntur possimus, quod tempora enim unde"
               />
               <Row
                 icon={CheckCircle2}
                 tone="gold"
                 title="Certified, codified, future-proof"
-                desc="Reinforcement strategies validated through non-linear FEA — built to TIA, EN and IS codes."
+                desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore in saepe magnam consequuntur possimus, quod tempora enim unde"
               />
             </div>
           </motion.div>

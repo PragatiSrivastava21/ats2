@@ -27,10 +27,9 @@ export const Footer = () => {
 
           <div className="grid gap-10 sm:grid-cols-3 lg:col-span-8">
             <FooterCol title="Company" items={[
+              { label: "Home", to: "/" },
               { label: "About", to: "/about" },
-              { label: "Our Work", to: "/work" },
-              { label: "Blog", to: "/blog" },
-              { label: "Contact", to: "/contact" },
+              { label: "Services", to: "/services" },
             ]} />
             <FooterCol title="Services" items={[
               { label: "Structural Analysis", to: "/services" },
@@ -39,7 +38,7 @@ export const Footer = () => {
               { label: "Tower Audit", to: "/services" },
             ]} />
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Contact</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Reach Us</h4>
               <ul className="mt-5 space-y-3 text-sm text-white/70">
                 <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-gold" /> Engineering HQ, Pune, India</li>
                 <li className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 text-gold" /> hello@atss.engineering</li>
@@ -51,12 +50,6 @@ export const Footer = () => {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center">
           <p>© 2026 ATSS. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Website by{" "}
-            <a href="#" className="inline-flex items-center gap-0.5 text-gold hover:text-gold-soft">
-              We Insightians <ArrowUpRight className="h-3 w-3" />
-            </a>
-          </p>
         </div>
       </div>
     </footer>
